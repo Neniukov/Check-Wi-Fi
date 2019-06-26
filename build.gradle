@@ -1,0 +1,33 @@
+buildscript {
+    ext.kotlin_version = '1.3.31'
+    ext.koin_version = "2.0.0-GA1"
+    ext.rx_java_version = "2.1.14"
+    ext.rx_android_version = "2.1.0"
+    ext.reactive_wifi_version = "0.3.0"
+    ext.mvrx_version = "1.0.2"
+    ext.epoxy_version = "3.6.0"
+    ext.speedview_version = "1.3.1"
+
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.0'
+        classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
